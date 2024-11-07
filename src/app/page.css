@@ -1,0 +1,28 @@
+body{
+
+    background-color: aqua
+}
+
+
+
+
+header{
+margin: 5px 45px;
+padding: auto;
+text-align: justify;
+text : center;
+}
+
+p {
+
+font-family:;}
+
+
+
+footer{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    text-align: center;
+    text-justify: auto;
+}
