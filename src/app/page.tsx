@@ -1,6 +1,55 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import WordFadeIn from "@/components/ui/word-fade-in";
+import WordFadeIn from "@/components/ui/word-fade-in"; 
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {AiOutlineMenu} from "react-icons/ai";
+import { div } from "framer-motion/client";
+
+export default function Home() {
+  const[menuOpen, setMenuOpen] = useState(false); //controla a visibilidade do menu
+
+  return (
+    <div className="container mx-auto px-4 text-zinc-600">
+      <header className="py-6 relative">
+        <nav className="flex justify-between items-center">
+          <h1 className="text-4x l fonte-bold text-red-600"></h1>
+
+          <div className="relative"></div>
+
+        </nav>
+      </header>
+        
+    </div>
+  )
+}
+
+
+function FeatureCard({ title, description }) {
+  return (
+    <div className="feature-card text-center">
+      <h3 className="text-xl font-semibold mb-4">{title}</h3>
+      <p>{description}</p>
+    </div>
+  );
+}
+
+function PricingCard({ title, price, features, highlight }) {
+  return (
+    <div className={`pricing-card border rounded-lg p-6 text-center ${highlight ? 'bg-red-600 text-white' : 'border-gray-200'}`}>
+      <h3 className="text-2xl font-semibold mb-4">{title}</h3>
+      <p className={`text-3xl font-bold mb-6 ${highlight ? '' : 'text-red-600'}`}>{price}</p>
+      <ul className="mb-6">
+        {features.map((feature, index) => (
+          <li key={index}>{feature}</li>
+        ))}
+      </ul>
+      <Button variant={highlight ? "outline" : "solid"} className={highlight ? "bg-white text-red-600" : "text-red-600"}>
+        {highlight ? "Contate-nos" : "Escolher Plano"}
+      </Button>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -9,18 +58,15 @@ export default function Home() {
         <nav className="flex justify-between items-center ">
           <h1 className="text-4xl font-bold text-red-600">Cheffia</h1>
           <div>
-            <Button
-              variant="ghost"
-              className="mr-4 text-zinc-700 hover:text-red-600 text-xl font-semibold"
-            >
-              Recursos
-            </Button>
-            <Button
-              variant="ghost"
-              className="mr-4 text-zinc-700 hover:text-red-600 text-xl font-semibold"
-            >
-              Preços
-            </Button>
+            {["Recursos", "Preços"].map((item, index) => (
+              <Button
+                key={index}
+                variant="ghost"
+                className="mr-4 text-zinc-700 hover:text-red-600 text-xl font-semibold"
+              >
+                {item}
+              </Button>
+            ))}
             <Button className="bg-red-600 text-white hover:bg-red-700 text-xl font-semibold">
               Começar
             </Button>
@@ -48,31 +94,13 @@ export default function Home() {
             Recursos principais
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="feature-card text-center">
-              <h3 className="text-xl font-semibold mb-4">
-                QR Code Personalizado
-              </h3>
-              <p>
-                Cada restaurante recebe um QR code único para fácil acesso ao
-                menu digital.
-              </p>
-            </div>
-            <div className="feature-card text-center">
-              <h3 className="text-xl font-semibold mb-4">Pedidos Digitais</h3>
-              <p>
-                Clientes fazem pedidos diretamente pelo smartphone, reduzindo
-                erros e agilizando o processo.
-              </p>
-            </div>
-            <div className="feature-card text-center">
-              <h3 className="text-xl font-semibold mb-4">
-                Pagamento Integrado
-              </h3>
-              <p>
-                Diversas opções de pagamento digital, incluindo Pix, NuPay,
-                Samsung Pay, Apple Pay e Google Pay.
-              </p>
-            </div>
+            {[
+              { title: "QR Code Personalizado", description: "Cada restaurante recebe um QR code único para fácil acesso ao menu digital." },
+              { title: "Pedidos Digitais", description: "Clientes fazem pedidos diretamente pelo smartphone, reduzindo erros e agilizando o processo." },
+              { title: "Pagamento Integrado", description: "Diversas opções de pagamento digital, incluindo Pix, NuPay, Samsung Pay, Apple Pay e Google Pay." }
+            ].map((feature, index) => (
+              <FeatureCard key={index} {...feature} />
+            ))}
           </div>
         </section>
 
@@ -81,40 +109,13 @@ export default function Home() {
             Planos e Preços
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="pricing-card border border-gray-200 rounded-lg p-6 text-center">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-                Básico
-              </h3>
-              <p className="text-3xl font-bold mb-6 text-red-600">R$ 99/mês</p>
-              <ul className="mb-6">
-                <li>Até 100 pedidos/mês</li>
-                <li>Suporte por email</li>
-                <li>QR Code personalizado</li>
-              </ul>
-              <Button variant="outline">Escolher Plano</Button>
-            </div>
-            <div className="pricing-card border border-gray-200 rounded-lg p-6 text-center bg-red-600 text-white">
-              <h3 className="text-2xl font-semibold mb-4">Profissional</h3>
-              <p className="text-3xl font-bold mb-6">R$ 199/mês</p>
-              <ul className="mb-6">
-                <li>Até 500 pedidos/mês</li>
-                <li>Suporte prioritário</li>
-                <li>Análise de dados básica</li>
-              </ul>
-              <Button className="bg-white text-red-600 hover:bg-gray-100">
-                Escolher Plano
-              </Button>
-            </div>
-            <div className="pricing-card border border-gray-200 rounded-lg p-6 text-center">
-              <h3 className="text-2xl font-semibold mb-4">Enterprise</h3>
-              <p className="text-3xl font-bold mb-6">Personalizado</p>
-              <ul className="mb-6">
-                <li>Pedidos ilimitados</li>
-                <li>Suporte 24/7</li>
-                <li>Análise de dados avançada</li>
-              </ul>
-              <Button variant="outline">Contate-nos</Button>
-            </div>
+            {[
+              { title: "Básico", price: "R$ 99/mês", features: ["Até 100 pedidos/mês", "Suporte por email", "QR Code personalizado"], highlight: false },
+              { title: "Profissional", price: "R$ 199/mês", features: ["Até 500 pedidos/mês", "Suporte prioritário", "Análise de dados básica"], highlight: true },
+              { title: "Enterprise", price: "Personalizado", features: ["Pedidos ilimitados", "Suporte 24/7", "Análise de dados avançada"], highlight: false }
+            ].map((plan, index) => (
+              <PricingCard key={index} {...plan} />
+            ))}
           </div>
         </section>
 
