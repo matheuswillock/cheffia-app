@@ -25,9 +25,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        className={`${roboto.className} bg-slate-100`}
+        className={`${roboto.className} bg-defaultColor text-primaryColor`}
       >
-          {children}
+        {children}
       </body>
     </html>
   );

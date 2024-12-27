@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
+				defaultColor: '#000000',
+				primaryColor: '#EDEDED',
+				secondaryColor: '#888888',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
