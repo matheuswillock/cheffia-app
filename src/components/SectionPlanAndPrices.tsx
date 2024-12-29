@@ -39,7 +39,7 @@ export function SectionPlanAndPrices() {
 
   return (
     <section className="pricing py-20">
-      <h2 className="text-3xl font-bold text-center mb-12 text-primaryColor">
+      <h2 className="text-3xl font-bold text-center mb-12 text-primary">
         Planos e Preços
       </h2>
 

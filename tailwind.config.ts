@@ -10,26 +10,34 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
-				defaultColor: '#000000',
-				primaryColor: '#EDEDED',
-				secondaryColor: '#888888',
-  			background: 'hsl(var(--background))',
+				success: '#00BA88',
+				error: '#FF6B6B',
+				warning: '#FFB845',
+
+				colorPrimary: '#E1E1E6',
+				colorSecondary: '#A8A8B3',
+				colorHighlight: '#F9F07E',
+
+				defaultColor: '#004953',
+
+				cardBackground: '#005F6B',
+				cardBorder: '#00E3CC',
+				cardBackgroundHighlight: '#00E3CC',
+				cardBorderHighlight: '#00BA88',
+
+				sectionHighlight: '#004953',
+
+				buttonPrimary: '#F9F07E',
+				buttonTextPrimary: '#004953',
+				buttonPrimaryHover: '#FFB845',
+
+				buttonSecondary: '#00E3CC',
+				buttonTextSecondary: '#004953',
+
   			foreground: 'hsl(var(--foreground))',
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
-  			},
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
-  			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',

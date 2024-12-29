@@ -10,20 +10,20 @@ interface PropsPlanAndPrices {
 
 export function PlanAndPrices({ PlanTitle, Price, Description, CallToActionValue, IsSelected}: PropsPlanAndPrices) {
   const infosColors = IsSelected
-    ? "bg-red-600 text-primaryColor"
-    : "";
+    ? "bg-buttonSecondary text-buttonTextSecondary border-cardBorderHighlight "
+    : "bg-cardBackground border-cardBorder";
 
-  const titleColor = IsSelected 
-  ? "" 
-  : "text-primaryColor";
+  const titleColor = IsSelected ? "" : "colorPrimary";
   
   const priceColor = IsSelected
     ? ""
-    : "text-3xl font-bold mb-6 text-red-600";
+    : "text-3xl font-bold mb-6 text-buttonPrimary";
   
   return (
-    <div
-      className={`flex flex-col gap-2  pricing-card border border-gray-200 rounded-xl p-6 text-center ${infosColors}`}
+    <button
+      className={`flex flex-col items-center justify-center gap-2  border-2  rounded-xl p-6 text-center ${infosColors}
+      transition-all duration-300 ease-in-out 
+      hover:scale-110 hover:shadow-lg`}
     >
       <h3 className={`text-3xl font-semibold my-4 ${titleColor}`}>
         {PlanTitle}
@@ -36,14 +36,6 @@ export function PlanAndPrices({ PlanTitle, Price, Description, CallToActionValue
           <li key={index}>{item}</li>
         ))}
       </ul>
-
-      <Button
-        size="lg"
-        variant="outline"
-        className={`mb-3`}
-      >
-        {CallToActionValue !== "" ? CallToActionValue : "Escolher Plano"}
-      </Button>
-    </div>
+    </button>
   );
 }
