@@ -1,10 +1,7 @@
-import { Button } from "./ui/button";
-
 interface PropsPlanAndPrices {
   PlanTitle: string;
   Price: string;
   Description: string[];
-  CallToActionValue: string;
   IsSelected: boolean
 }
 
