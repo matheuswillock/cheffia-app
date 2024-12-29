@@ -24,7 +24,7 @@ jobs:
         cache: 'npm'
         
     - name: Instalar dependências
-      run: npm pipeline
+      run: npm ci
       
     - name: Verificar lint
       run: npm run lint
