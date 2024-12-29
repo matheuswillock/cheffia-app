@@ -2,26 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  font-size: 62.5%; /*=> 16px*/
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  color: black;
+  background: #EBF2F5;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body,
+input,
+button,
+textarea {
+
+  /* font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    font-family: 'Nunito', sans-serif; */
+  font: 400 1.8rem/1 'Nunito', sans-serif;
 }
