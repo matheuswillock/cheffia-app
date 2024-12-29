@@ -10,7 +10,6 @@ export function SectionPlanAndPrices() {
         "Suporte por email",
         "QR Code personalizado",
       ],
-      callToActionValue: "",
       isSelected: false,
     },
     {
@@ -21,7 +20,6 @@ export function SectionPlanAndPrices() {
         "Suporte prioritário",
         "Análise de dados básica",
       ],
-      callToActionValue: "",
       isSelected: true,
     },
     {
@@ -32,7 +30,6 @@ export function SectionPlanAndPrices() {
         "Suporte 24/7",
         "Análise de dados avançada",
       ],
-      callToActionValue: "Contate-nos",
       isSelected: false,
     },
   ];
@@ -49,7 +46,6 @@ export function SectionPlanAndPrices() {
             PlanTitle={card.planTitle}
             Price={card.price}
             Description={card.description}
-            CallToActionValue={card.callToActionValue}
             IsSelected={card.isSelected}
           />
         ))}
