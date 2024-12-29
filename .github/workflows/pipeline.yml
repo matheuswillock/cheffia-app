@@ -30,4 +30,5 @@ jobs:
       run: npm run lint
       
     - name: Verificar build
+      if: success() && steps.lint.outcome == 'success'
       run: npm run build
