@@ -5,7 +5,7 @@ interface PropsPlanAndPrices {
   IsSelected: boolean
 }
 
-export function PlanAndPrices({ PlanTitle, Price, Description, CallToActionValue, IsSelected}: PropsPlanAndPrices) {
+export function PlanAndPrices({ PlanTitle, Price, Description, IsSelected}: PropsPlanAndPrices) {
   const infosColors = IsSelected
     ? "bg-buttonSecondary text-buttonTextSecondary border-cardBorderHighlight "
     : "bg-cardBackground border-cardBorder";
