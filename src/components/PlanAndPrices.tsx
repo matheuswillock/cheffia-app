@@ -6,10 +6,6 @@ interface PropsPlanAndprices {
 }
 
 export function PlanAndPrices({ planTitle, price, description, isSelected}: PropsPlanAndprices) {
-  const infosColors = isSelected
-    ? "bg-buttonSecondary text-buttonTextSecondary border-cardBorderHighlight "
-    : "bg-cardBackground border-cardBorder";
-
   const titleColor = isSelected ? "" : "colorPrimary";
   
   const priceColor = isSelected
@@ -21,20 +17,11 @@ export function PlanAndPrices({ planTitle, price, description, isSelected}: Prop
     border-2 rounded-xl p-6 text-center
     transition-all duration-300 ease-in-out 
     hover:scale-110 hover:shadow-lg
-    ${
-      isSelected
-        ? "bg-buttonSecondary text-buttonTextSecondary border-cardBorderHighlight"
-        : "bg-cardBackground border-cardBorder"
+    ${ isSelected
+      ? "bg-buttonSecondary text-buttonTextSecondary border-cardBorderHighlight"
+      : "bg-cardBackground border-cardBorder text-colorPrimary"
     }
   `;
-
-  const titleClasses = `text-3xl font-semibold my-4 ${
-    !isSelected ? "colorPrimary" : ""
-  }`;
-  const priceClasses = `text-4xl font-bold mb-6 ${
-    !isSelected ? "text-buttonPrimary" : ""
-  }`;
-
 
   return (
     <button
@@ -49,7 +36,7 @@ export function PlanAndPrices({ planTitle, price, description, isSelected}: Prop
 
       <p className={`text-4xl font-bold mb-6 ${priceColor}`}>{price}</p>
 
-      <ul className="mb-6" role="list">
+      <ul className="mb-6" role="list" >
         {description.map((item, index) => (
           <li key={index}>{item}</li>
         ))}

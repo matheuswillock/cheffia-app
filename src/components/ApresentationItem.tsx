@@ -23,7 +23,7 @@ export function ApresentationItem({
         height={80}
         alt={ItemTitle} // melhor usar o título como alt
       />
-      <p>{ItemDescription}</p>
+      <p className="text-colorPrimary">{ItemDescription}</p>
     </div>
   );
 }
