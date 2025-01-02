@@ -9,10 +9,10 @@ import WordRotate from "@/components/ui/word-rotate";
 
 export default function Home() {
   return (
-    <div className="container h-full mx-auto p-4 text-secondary">
+    <div className="container  mx-auto p-4 text-secondary">
       <SideBar />
 
-      <main className="">
+      <main className="mt-32">
         <section className=" flex flex-col justify-items-center items-center hero text-center py-20 gap-4">
           <div>
             <WordRotate
@@ -38,9 +38,9 @@ export default function Home() {
         <SectionPlanAndPrices />
       </main>
 
-      <div className="mb-52 text-center text-secondary w-full ">
+      <footer className="py-6 text-center text-secondary w-full ">
         <p>&copy; 2023 Cheffia. Todos os direitos reservados.</p>
-      </div>
+      </footer>
     </div>
   );
 }
