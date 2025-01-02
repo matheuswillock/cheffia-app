@@ -1,25 +1,36 @@
+import Image from "next/image";
+
+
 interface PropsPlanAndprices {
   planTitle: string;
   price: string;
   description: string[];
-  isSelected: boolean
+  icon: string
+  isSelected: boolean;
 }
 
-export function PlanAndPrices({ planTitle, price, description, isSelected}: PropsPlanAndprices) {
+export function PlanAndPrices({
+  planTitle,
+  price,
+  description,
+  isSelected,
+  icon
+}: PropsPlanAndprices) {
   const titleColor = isSelected ? "" : "colorPrimary";
-  
+
   const priceColor = isSelected
     ? ""
     : "text-3xl font-bold mb-6 text-buttonPrimary";
-  
+
   const cardClasses = `
     flex flex-col items-center justify-center gap-2 
     border-2 rounded-xl p-6 text-center
     transition-all duration-300 ease-in-out 
     hover:scale-110 hover:shadow-lg
-    ${ isSelected
-      ? "bg-buttonSecondary text-buttonTextSecondary border-cardBorderHighlight"
-      : "bg-cardBackground border-cardBorder text-colorPrimary"
+    ${
+      isSelected
+        ? "bg-colorPrimary text-defaultColor border-colorSecondary border-4"
+        : "bg-cardBackground border-cardBorder text-colorPrimary"
     }
   `;
 
@@ -30,17 +41,25 @@ export function PlanAndPrices({ planTitle, price, description, isSelected}: Prop
       role="radio"
       aria-checked={isSelected}
     >
-      <h3 className={`text-3xl font-semibold my-4 ${titleColor}`}>
+      <h3 className={`text-2xl font-semibold ${titleColor}`}>
         {planTitle}
       </h3>
 
-      <p className={`text-4xl font-bold mb-6 ${priceColor}`}>{price}</p>
+      <p className={`text-6xl font-bold m-8 ${priceColor}`}>{price}</p>
 
-      <ul className="mb-6" role="list" >
+      <div className="m-4" role="list">
         {description.map((item, index) => (
-          <li key={index}>{item}</li>
+          <div className="flex items-center gap-2 mb-3">
+            <Image
+              src={icon} // usar a propriedade aqui
+              width={10}
+              height={10}
+              alt={item}
+            />
+            <div className="text-2xl font-semibold">{item}</div>
+          </div>
         ))}
-      </ul>
+      </div>
     </button>
   );
 }

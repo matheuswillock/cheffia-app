@@ -28,8 +28,8 @@ export default function Home() {
           </div>
 
           <PulsatingButton
-            className=" text-buttonTextPrimary bg-buttonPrimary max-w-96 h-24 px-20 text-4xl font-semibold "
-            pulseColor="#FFB845"
+            className=" text-defaultColor bg-buttonPrimary max-w-96 h-24 px-20 text-4xl font-semibold "
+            pulseColor="#a1a1aa"
           >
             Começar
           </PulsatingButton>
@@ -38,7 +38,7 @@ export default function Home() {
         <SectionPlanAndPrices />
       </main>
 
-      <footer className="py-6 text-center text-secondary w-full ">
+      <footer className="py-6 text-center text-colorSecondary w-full ">
         <p>&copy; 2023 Cheffia. Todos os direitos reservados.</p>
       </footer>
     </div>

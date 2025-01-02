@@ -1,4 +1,6 @@
 import { PlanAndPrices } from "./PlanAndPrices";
+import Check from "../assets/check.svg";
+import CheckInDefautlColor from "../assets/check-in-default-color.svg"
 
 export function SectionPlanAndPrices() {
   const cardPlanAndPrices = [
@@ -10,6 +12,7 @@ export function SectionPlanAndPrices() {
         "Suporte por email",
         "QR Code personalizado",
       ],
+      icon: Check,
       isSelected: false,
     },
     {
@@ -20,6 +23,7 @@ export function SectionPlanAndPrices() {
         "Suporte prioritário",
         "Análise de dados básica",
       ],
+      icon: CheckInDefautlColor,
       isSelected: true,
     },
     {
@@ -30,13 +34,14 @@ export function SectionPlanAndPrices() {
         "Suporte 24/7",
         "Análise de dados avançada",
       ],
+      icon: Check,
       isSelected: false,
     },
   ];
 
   return (
     <section className="pricing py-20">
-      <h2 className="text-3xl font-bold text-center mb-12 text-primary">
+      <h2 className="text-3xl font-bold text-center mb-12 text-colorPrimary">
         Planos e Preços
       </h2>
 
@@ -47,6 +52,7 @@ export function SectionPlanAndPrices() {
             price={card.price}
             description={card.description}
             isSelected={card.isSelected}
+            icon={card.icon}
           />
         ))}
       </div>

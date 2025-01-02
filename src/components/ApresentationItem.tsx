@@ -14,16 +14,16 @@ export function ApresentationItem({
 }: PropsApresentationItem) {
   return (
     <div className="feature-card text-center flex flex-col items-center justify-center gap-10">
-      <h3 className="text-1xl font-semibold text-colorHighlight mb-4">
+      <h3 className="text-1xl font-semibold text-colorPrimary mb-4">
         {ItemTitle}
       </h3>
       <Image
-        src={imagePath} // usar a propriedade aqui
+        src={imagePath}
         width={80}
         height={80}
-        alt={ItemTitle} // melhor usar o título como alt
+        alt={ItemTitle}
       />
-      <p className="text-colorPrimary">{ItemDescription}</p>
+      <p className="text-colorSecondary">{ItemDescription}</p>
     </div>
   );
 }

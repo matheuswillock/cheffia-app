@@ -5,12 +5,12 @@ export function SideBar() {
   return (
     <aside className="p-6">
       <nav className="flex justify-between items-center mt-12">
-        <h1 className="text-5xl font-bold text-colorHighlight">Cheffia</h1>
+        <h1 className="text-5xl font-bold text-colorPrimary">Cheffia</h1>
         <div className="flex items-center">
           <Link href="#">
             <Button
               variant="ghost"
-              className="mr-4 text-colorPrimary hover:text-buttonPrimaryHover text-1xl font-semibold"
+              className="mr-4 text-colorSecondary hover:text-colorPrimary text-1xl font-semibold"
             >
               Recursos
             </Button>
@@ -19,7 +19,7 @@ export function SideBar() {
           <Link href="#">
             <Button
               variant="ghost"
-              className="mr-4 text-colorPrimary hover:text-buttonPrimaryHover text-1xl font-semibold "
+              className="mr-4 text-colorSecondary hover:text-colorPrimary text-1xl font-semibold "
             >
               Preços
             </Button>
@@ -28,7 +28,7 @@ export function SideBar() {
           <Link href="/login">
             <Button
               size="lg"
-              className="bg-buttonPrimary text-buttonTextPrimary hover:bg-buttonPrimaryHover h-16 w-14 rounded-xl px-20 text-3xl font-semibold"
+              className="bg-buttonPrimary text-defaultColor hover:bg-colorSecondary h-16 w-14 rounded-xl px-20 text-3xl font-semibold"
             >
               Login
             </Button>
