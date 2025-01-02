@@ -43,10 +43,10 @@ export function SectionPlanAndPrices() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {cardPlanAndPrices.map((card) => (
           <PlanAndPrices
-            PlanTitle={card.planTitle}
-            Price={card.price}
-            Description={card.description}
-            IsSelected={card.isSelected}
+            planTitle={card.planTitle}
+            price={card.price}
+            description={card.description}
+            isSelected={card.isSelected}
           />
         ))}
       </div>

@@ -1,39 +1,34 @@
+import {nextui} from '@nextui-org/theme';
 import type { Config } from "tailwindcss";
 
 const config: Config = {
     darkMode: ["class"],
-    content: [
+  content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/components/form.js"
   ],
   theme: {
   	extend: {
   		colors: {
-				success: '#00BA88',
-				error: '#FF6B6B',
-				warning: '#FFB845',
-
-				colorPrimary: '#E1E1E6',
-				colorSecondary: '#A8A8B3',
-				colorHighlight: '#F9F07E',
-
-				defaultColor: '#004953',
-
-				cardBackground: '#005F6B',
-				cardBorder: '#00E3CC',
-				cardBackgroundHighlight: '#00E3CC',
-				cardBorderHighlight: '#00BA88',
-
-				sectionHighlight: '#004953',
-
-				buttonPrimary: '#F9F07E',
-				buttonTextPrimary: '#004953',
-				buttonPrimaryHover: '#FFB845',
-
-				buttonSecondary: '#00E3CC',
-				buttonTextSecondary: '#004953',
-
+  			success: '#00BA88',
+  			error: '#FF6B6B',
+  			warning: '#FFB845',
+  			colorPrimary: '#E1E1E6',
+  			colorSecondary: '#A8A8B3',
+  			colorHighlight: '#F9F07E',
+  			defaultColor: '#004953',
+  			cardBackground: '#005F6B',
+  			cardBorder: '#00E3CC',
+  			cardBackgroundHighlight: '#00E3CC',
+  			cardBorderHighlight: '#00BA88',
+  			sectionHighlight: '#004953',
+  			buttonPrimary: '#F9F07E',
+  			buttonTextPrimary: '#004953',
+  			buttonPrimaryHover: '#FFB845',
+  			buttonSecondary: '#00E3CC',
+  			buttonTextSecondary: '#004953',
   			foreground: 'hsl(var(--foreground))',
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
@@ -66,9 +61,22 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		animation: {
+  			pulse: 'pulse var(--duration) ease-out infinite'
+  		},
+  		keyframes: {
+  			pulse: {
+  				'0%, 100%': {
+  					boxShadow: '0 0 0 0 var(--pulse-color)'
+  				},
+  				'50%': {
+  					boxShadow: '0 0 0 8px var(--pulse-color)'
+  				}
+  			}
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),nextui()],
 };
 export default config;

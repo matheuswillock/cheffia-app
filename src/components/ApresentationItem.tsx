@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 interface PropsApresentationItem {
+  id?: string | number;
   ItemTitle: string;
   ItemDescription: string;
   imagePath: string;
